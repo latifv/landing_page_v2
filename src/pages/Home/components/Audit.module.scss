@@ -1,0 +1,102 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.audit {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 77px;
+  @include respond-to(tablet-p) {
+    flex-direction: column;
+    @include flexCenter;
+    padding: 1rem;
+  }
+  // TOP
+  .audit_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .audit_top__left {
+      h2 {
+        font-size: $card-title-font-size;
+        font-weight: $bold-weight;
+        color: $light-color;
+        margin-bottom: 1rem;
+      }
+      p {
+        color: $card-desc-color;
+      }
+    }
+    .audit_top__right {
+    }
+  }
+
+  // MIDDLE
+  .audit_mid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include respond-to(tablet-p) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .audit_mid__title {
+      font-size: $extra-large-font-size;
+      color: $light-color;
+    }
+    .audit_mid__tokenAddress__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+      @include respond-to(tablet-p) {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .audit_mid__tokenAddress {
+        display: flex;
+        gap: 1.2rem;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 54px;
+        padding: 1rem;
+        border: 2px solid $light-color;
+        color: $light-color;
+        .audit_mid__tokenAddress__copy {
+          transition: all 0.1s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            scale: 1.1;
+          }
+        }
+      }
+    }
+  }
+
+  // BOTTOM
+  .audit_bottom {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 6rem !important;
+    @include respond-to(tablet-p) {
+      flex-direction: column;
+      gap: 6rem;
+    }
+    .audit_bottom__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      span {
+        border-image-source: linear-gradient(to left, #ff9085 30%, #fb6fbb 99%);
+        background-image: linear-gradient(to left, #ff9085 30%, #fb6fbb 99%);
+        font-weight: $bold-weight;
+        text-align: center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

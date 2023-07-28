@@ -1,0 +1,42 @@
+@import "../../../styles/_variables.scss";
+@import "../../../styles/mixins.scss";
+
+.listBanner {
+  height: 288px;
+  width: 1200px;
+  border-radius: 20px;
+  background-image: linear-gradient(to left, #ff9085 30%, #fb6fbb 99%);
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include respond-to(tablet-p) {
+    margin: 1rem;
+    width: auto !important;
+    flex-direction: column;
+    height: auto !important;
+    padding: 1.5rem;
+    align-items: start;
+    gap: 1.5rem;
+    margin-top: 5rem;
+  }
+  .listBanner__right {
+    display: flex;
+    gap: 1rem;
+    .listBanner__right__button__second {
+      background: none;
+      border: 2px solid $card-bg-color;
+    }
+    .listBanner__right__button__first {
+      background: #aa80f9;
+      border: 2px solid $card-bg-color;
+    }
+  }
+  h2 {
+    text-transform: uppercase;
+    font-size: $card-title-font-size;
+    font-weight: $bold-weight;
+    color: $bg-color;
+    margin-bottom: 1rem;
+  }
+}

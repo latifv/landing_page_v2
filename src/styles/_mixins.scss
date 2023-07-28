@@ -1,0 +1,163 @@
+@import "variables";
+
+// Responsive mixin'i, öğelerin duyarlılığını ayarlamak için kullanılır.
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $media == tablet-p {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $media == tablet-l {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media (max-width: 1280px) {
+      @content;
+    }
+  }
+}
+
+// Box Sizing mixin'i, öğelerin kutu modelini belirlemek için kullanılır.
+
+@mixin gradientText {
+  border-image-source: linear-gradient(to left, #ff9085 30%, #fb6fbb 99%);
+  background-image: linear-gradient(to left, #ff9085 30%, #fb6fbb 99%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin boxSizing($boxSizing: border-box) {
+  -webkit-box-sizing: $boxSizing;
+  -moz-box-sizing: $boxSizing;
+  box-sizing: $boxSizing;
+}
+
+@mixin baseTransition() {
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin pagesTitleStyle {
+  font-size: $extra-large-font-size * 2 + 2px;
+  color: #000;
+}
+
+@mixin sideBarItemStyle {
+  border-radius: 6px;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.25);
+  background-color: $primary-color;
+  color: $light-color !important;
+}
+
+@mixin baseCheckboxHover() {
+  background: #eafff4 0% 0% no-repeat padding-box;
+  box-shadow: 0px 1px 2px #00e68580;
+  border: 2px solid #00b735;
+  opacity: 1;
+}
+
+@mixin inputFocus($color: $primary-color) {
+  outline: none;
+  border: solid 2px $primary-color;
+  background-color: #e3edf8;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+// Inputlar için kullanılan label style mixin'i.
+@mixin labelStyle($color: $gray-color, $fontSize: $small-font-size) {
+  font-size: $small-font-size;
+  font-weight: $medium-weight;
+  color: $gray-color;
+}
+
+@mixin cardHoverable {
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 20px 30px 30px 0 rgba(211, 211, 211, 0.5);
+    border-color: #0056f8 !important;
+  }
+}
+
+// Hover Shadow Transition mixin'i, öğelere üzerine gelindiğinde gölge efekti ve geçiş ekler.
+@mixin hoverShadowTransition(
+  $duration: 0.3s,
+  $shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
+) {
+  transition: box-shadow $duration;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  &:hover {
+    box-shadow: $shadow;
+  }
+}
+
+// Flex Center mixin'i, flex öğelerini dikey ve yatayda ortalamak için kullanılır.
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Clearfix mixin'i, öğelerin float özelliğinden kaynaklanan içeriklerin dökülmesini sağlar.
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Responsive Font Size mixin'i, duyarlı bir şekilde font boyutunu ayarlamak için kullanılır.
+@mixin responsiveFontSize($minSize, $maxSize, $minWidth, $maxWidth) {
+  font-size: $minSize;
+  @media screen and (min-width: $minWidth) {
+    font-size: calc(
+      #{$minSize} + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth}) /
+            (#{$maxWidth} - #{$minWidth}))
+    );
+  }
+  @media screen and (min-width: $maxWidth) {
+    font-size: $maxSize;
+  }
+}
+
+// Gradient Background mixin'i, bir öğeye ardışık bir renk geçişi arka planı uygular.
+@mixin gradientBackground($startColor, $endColor) {
+  background: $startColor;
+  background: linear-gradient(to right, $startColor, $endColor);
+}
+
+// Metni belirli bir genişlikte keserek nokta işareti ile temsil etmeyi sağlar.
+@mixin textTruncate($width) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: $width;
+}
+
+// Öğeleri dikey bir düzende sıralayarak daha düzenli bir görünüm elde eder.
+@mixin flexColumn() {
+  display: flex;
+  flex-direction: column;
+}
+
+// Bir öğeyi tam ortada konumlandırır.
+@mixin absoluteCenter() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Kenarlara yuvarlaklık ekler.
+@mixin borderRadius($radius) {
+  border-radius: $radius;
+}

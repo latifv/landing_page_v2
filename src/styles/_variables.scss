@@ -1,0 +1,77 @@
+// Colors
+$primary-color: #0056f8;
+$deactive-color: #adaeb8;
+$secondary-color: #151517;
+$bg-color: #161617;
+$success-color: #28a745;
+$danger-color: #ff2929;
+$dark-color: #000;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+$light-color: #fff;
+$border-color: #e8e8e8;
+$gray-color: #78798a;
+$package-menu-color: #78798a;
+$package-menu-active-color: #ebf2fa;
+$notification-color: #f43e59;
+$card-desc-color: #898990;
+$dashed-color: #545454;
+$approved-color: #1ebe47;
+$price-color: #202634;
+$light-gray-color: #494e5c;
+$card-bg-color: #232325;
+$card-title-color: #898990;
+$gradient-color: linear-gradient(
+  to right,
+  #fb6fbb 0%,
+  #ff9085 51%,
+  #fa1191 100%
+);
+// Font family
+$base-font-family: "Axiforma", sans-serif;
+
+// Weights
+$light-weight: 300;
+$normal-weight: 400;
+$medium-weight: 500;
+$semi-bold-weight: 600;
+$bold-weight: 700;
+$extra-bold-weight: 800;
+
+// Font size
+$extra-small-font-size: 12px;
+$small-font-size: 14px;
+$base-font-size: 16px;
+$large-font-size: 18px;
+$extra-large-font-size: 20px;
+$card-title-font-size: 39px;
+$title-font-size: 56px;
+
+// Size
+$spacing-unit: 1rem;
+$border-radius: 4px;
+$border: 1px solid $border-color;
+$dropdown-border-radius: 0.5rem;
+$list-height: 107px;
+
+// Responsive querys
+$mobile-max-width: 767px;
+$tablet-min-width: 768px;
+$tablet-max-width: 991px;
+$desktop-min-width: 992px;
+$desktop-large-min-width: 1280px;
+
+// Other variables
+$transition-duration: 0.3s;
+$max-width: 1200px;
+$container-padding: 1rem;
+
+// HOVERS COLOR
+
+$package-menu-hover-color: #ebf2fa;
+
+///////////////  -------- Example Use   -------- ///////////////
+$main-background-color: $light-color;
+$button-background-color: $primary-color;
+$button-text-color: $light-color;
+$border-color: $secondary-color;

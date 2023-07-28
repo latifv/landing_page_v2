@@ -1,0 +1,29 @@
+@import "../../../styles/_variables.scss";
+@import "../../../styles/_mixins.scss";
+
+.bottomCards {
+  margin-top: 4rem;
+  display: grid;
+  gap: 2rem;
+  @include respond-to(tablet-p) {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 1rem;
+  }
+  grid-template-columns: repeat(2, 1fr);
+  .bottomCards_card {
+    padding: 2rem 1rem;
+    display: flex;
+    gap: 2rem;
+    border-radius: 10px;
+    background-color: $card-bg-color;
+    h2 {
+      font-size: $extra-large-font-size + 2px;
+      font-weight: $bold-weight;
+      color: $light-color;
+    }
+    p {
+      margin-top: 1rem;
+      color: $card-desc-color;
+    }
+  }
+}

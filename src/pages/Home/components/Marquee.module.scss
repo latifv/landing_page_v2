@@ -1,0 +1,11 @@
+.Marquee__img {
+  width: 200px;
+  margin: 0 2rem;
+  filter: grayscale(100%);
+
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    filter: grayscale(0%);
+  }
+}

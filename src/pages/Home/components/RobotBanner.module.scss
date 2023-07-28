@@ -1,0 +1,71 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.robotBanner {
+  border-image-source: linear-gradient(to left, #ff9085 30%, #fb6fbb 99%);
+  border-image-slice: 1;
+  height: 484px;
+  background-image: linear-gradient(to left, #ff9085 30%, #fb6fbb 99%);
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  @include respond-to(tablet-p) {
+    height: auto !important;
+    padding: 1.5rem;
+    position: relative;
+    left: 6rem;
+  }
+  .robotBanner_right {
+    background-color: yellow;
+    width: 30%;
+    position: relative;
+    @include respond-to(tablet-p) {
+      img {
+        display: none;
+      }
+    }
+    img {
+      position: absolute;
+      bottom: -300px;
+      left: -40px;
+      width: 480px;
+    }
+  }
+  .robotBanner_left {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include respond-to(tablet-p) {
+      gap: 2rem;
+    }
+  }
+  h2 {
+    font-size: $card-title-font-size;
+    font-weight: $light-weight;
+    color: $bg-color;
+    line-height: 1.13;
+    letter-spacing: normal;
+    @include respond-to(tablet-p) {
+      font-size: 24px;
+    }
+  }
+  p {
+    font-weight: $bold-weight;
+    line-height: 1.5;
+    color: $dark-color;
+    @include respond-to(tablet-p) {
+      font-size: 14px;
+    }
+  }
+  .robotBanner_left__button {
+    width: fit-content !important;
+    padding: 15px 25px;
+    border: solid 2px #161617;
+    background-color: #aa80f9;
+  }
+}

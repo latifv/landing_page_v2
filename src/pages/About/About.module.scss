@@ -1,0 +1,112 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
+.about {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  position: relative;
+  &::after {
+    content: url("../../assets/images/backgrounds/Circle.svg");
+    position: absolute;
+    top: 100px;
+    z-index: -1;
+  }
+  .title {
+    width: 65%;
+    font-size: $card-title-font-size;
+    font-weight: $bold-weight;
+    line-height: 1.13;
+    color: $light-color;
+    text-transform: uppercase;
+  }
+  .desc {
+    color: $card-desc-color;
+    width: 53%;
+  }
+  .about_top {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .about_middle {
+    justify-content: space-between;
+    display: flex;
+    position: relative;
+    margin-top: 80px;
+    .about_middle__left {
+      width: 475px;
+      height: 534px;
+      flex-grow: 0;
+      margin: 0 91px 0 0;
+      background-color: yellow;
+    }
+    .about_middle__right {
+      width: 1043px;
+      height: 534px;
+      flex-grow: 0;
+      margin: 0 0 0 91px;
+      background-color: blue;
+      position: absolute;
+      right: -360px;
+    }
+  }
+  .about_bottom {
+    margin-top: 179px;
+    .slider {
+      width: 100%;
+      height: 458px;
+      flex-grow: 0;
+      margin: 0 0 1px;
+      background-color: #c4c4c4;
+    }
+    .about_bottom__desc {
+      margin-bottom: 33px;
+    }
+    .about_bottom__desc___other {
+      width: 79% !important;
+      font-size: $extra-large-font-size + 8px;
+      font-weight: $light-weight;
+      line-height: 1.13;
+      color: $light-color;
+      text-transform: uppercase;
+      margin-top: 2rem;
+    }
+  }
+}
+
+// LİST BANNER
+
+.listBanner {
+  margin-top: 171px;
+  height: 288px;
+  width: 1200px;
+  border-radius: 20px;
+  background-image: linear-gradient(to left, #ff9085 30%, #fb6fbb 99%);
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .listBanner__right {
+    display: flex;
+    gap: 1rem;
+    .listBanner__right__button__second {
+      background: none;
+      border: 2px solid $card-bg-color;
+    }
+    .listBanner__right__button__first {
+      background: #aa80f9;
+      border: 2px solid $card-bg-color;
+    }
+  }
+  .listBanner__left {
+    width: 60%;
+  }
+  h2 {
+    text-transform: uppercase;
+    font-size: $card-title-font-size;
+    font-weight: $bold-weight;
+    color: $bg-color;
+    margin-bottom: 1rem;
+  }
+}

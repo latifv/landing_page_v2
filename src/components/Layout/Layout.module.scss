@@ -1,0 +1,16 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  .mainContent {
+    width: 100%;
+    max-width: $max-width;
+  }
+  @include respond-to("tablet-p") {
+    overflow: hidden !important;
+  }
+}

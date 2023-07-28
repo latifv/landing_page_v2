@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import "../../styles/_variables.scss";
+.wrapper {
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  right: 0;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 4rem !important;
+  background: transparent !important;
+  font-size: 20px;
+  color: $light-color;
+  line-height: 30px;
+  z-index: 1000;
+}
+.direction {
+  background-color: red !important;
+}
+// .item {
+//   width: 200px;
+//   height: 300px;
+//   background-color: yellow;
+// }
+.arrow_right {
+  right: -50px !important;
+  top: 50%;
+}
+.arrow_left {
+  left: -50px !important;
+  top: 50%;
+}
+
+.item {
+  box-shadow: rgba(197, 0, 251, 0.07) 0px 1px 2px,
+    rgba(161, 2, 253, 0.07) 0px 2px 4px, rgba(174, 0, 254, 0.07) 0px 4px 8px,
+    rgba(242, 13, 13, 0.07) 0px 8px 16px, rgba(153, 0, 255, 0.07) 0px 16px 32px,
+    rgba(238, 0, 255, 0.07) 0px 32px 64px;
+  text-align: center;
+  color: white;
+  border: 1px solid rgba(170, 0, 255, 0.422);
+  font-size: 40px;
+  // position: absolute;
+  transition: height 1s, width 1s, left 1s, margin-top 1s, line-height 1s,
+    background-color 1s;
+  width: 200px;
+  height: 300px;
+  border-radius: 2rem;
+  transition: all 0.5s ease-in-out;
+}
+.textOverlay {
+  left: 50%;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
+  font-size: 1rem !important;
+  transform: translateX(-50%);
+}
+.item img {
+  width: 100%; // image is as wide as its parent
+  height: 100%; // height changes while keeping aspect ratio
+  object-fit: cover; // image will scale to maintain its aspect ratio while fitting within the box it resides
+  border-radius: 2rem;
+}
+
+$level2-height: 350px;
+$level2-width: 460px;
+$level1-height: 380px;
+$level1-width: 480px;
+$level0-height: 400px;
+$level0-width: 500px;
+
+$level-2-left: 850px;
+$level-1-left: 750px;
+$level0-left: 630px;
+$level1-left: 430px;
+$level2-left: 250px;
+
+.level-2 {
+  height: $level2-height;
+  width: $level2-width;
+  line-height: $level2-height;
+  left: $level-2-left;
+  margin-top: 25px;
+}
+
+.level-1 {
+  height: $level1-height;
+  width: $level1-width;
+  line-height: $level1-height;
+  left: $level-1-left;
+  margin-top: 10px;
+}
+
+.level0 {
+  height: $level0-height;
+  width: $level0-width;
+  line-height: $level0-height;
+  left: $level0-left;
+}
+
+.level1 {
+  height: $level1-height;
+  width: $level1-width;
+  line-height: $level1-height;
+  margin-top: 10px;
+  left: $level1-left;
+}
+
+.level2 {
+  height: $level2-height;
+  width: $level2-width;
+  line-height: $level2-height;
+  margin-top: 25px;
+  left: $level2-left;
+}
+
+.left-enter {
+  opacity: 0;
+  left: $level2-left - $level2-width;
+  height: $level2-height - 30;
+  width: $level2-width - 20;
+  line-height: $level2-height - 30;
+  margin-top: 40px;
+}
+
+.left-enter.left-enter-active {
+  opacity: 1;
+  left: $level2-left;
+  height: $level2-height;
+  width: $level2-width;
+  line-height: $level2-height;
+  margin-top: 25px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.left-leave {
+  opacity: 1;
+  left: $level-2-left;
+  height: $level2-height;
+  width: $level2-width;
+  line-height: $level2-height;
+  margin-top: 25px;
+}
+
+.left-leave.left-leave-active {
+  left: $level-2-left + $level2-width + 20;
+  opacity: 0;
+  height: $level2-height - 30;
+  line-height: 120px;
+  margin-top: 40px;
+  width: $level2-width - 20;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.right-enter {
+  opacity: 0;
+  left: $level-2-left + $level2-width;
+  height: $level2-height - 30;
+  width: $level2-width - 20;
+  line-height: $level2-height - 30;
+  margin-top: 40px;
+}
+
+.right-enter.right-enter-active {
+  left: $level-2-left;
+  opacity: 1;
+  height: $level2-height;
+  margin-top: 25px;
+  line-height: $level2-height;
+  width: $level2-width;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.right-leave {
+  left: $level2-left;
+  height: $level2-height;
+  opacity: 1;
+  margin-top: 25px;
+  line-height: $level2-height;
+  width: $level2-width;
+}
+
+.right-leave.right-leave-active {
+  left: $level2-left - $level2-width;
+  opacity: 0;
+  height: $level2-height - 30;
+  width: $level2-width - 20;
+  line-height: $level2-height - 30;
+  margin-top: 40px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+
+.noselect {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

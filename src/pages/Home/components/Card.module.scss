@@ -1,0 +1,261 @@
+@import "../../../styles/_variables";
+@import "../../../styles/_mixins";
+
+.cards {
+  min-height: 800px;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: space-between;
+  margin-top: 3rem;
+  @include respond-to(tablet-p) {
+    flex-direction: column;
+    gap: 0;
+    @include flexCenter;
+  }
+
+  // LEFT CARD
+  .cards__card__left {
+    @include respond-to(tablet-p) {
+      width: 82%;
+      margin-bottom: 2.5rem !important;
+    }
+    .cards__card__item {
+      background-image: url("../../../assets/images/backgrounds/HyperStore.png");
+    }
+    .cards__card__item__content__link {
+      font-weight: $extra-bold-weight;
+      outline: none;
+      text-transform: uppercase;
+      border-image-source: linear-gradient(to left, #ff9085 30%, #fb6fbb 99%);
+      background-image: linear-gradient(to left, #ff9085 30%, #fb6fbb 99%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: animate 10s linear infinite;
+    }
+    flex: 1;
+    .cards__card__item {
+      height: 100%;
+      .cards__card__item__img {
+        flex: 2;
+      }
+      .cards__card__item__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: 34px;
+        font-weight: $bold-weight;
+        color: $light-color;
+      }
+    }
+  }
+
+  // RIGHT CARD
+  .cards__card__right {
+    gap: 2.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include respond-to(tablet-p) {
+      width: 82%;
+    }
+    a {
+      text-decoration: none;
+      color: $card-title-color;
+      font-size: 16px !important;
+    }
+    .cards__card__item__content {
+      flex: 1;
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+    }
+    .cards__card__item__content__text {
+      font-size: 27px !important;
+    }
+    .cards__card__item {
+      min-height: 380px;
+      flex-basis: 100%;
+    }
+
+    // TOP CARD
+    .cards__card__item__top {
+      width: 100%;
+      .cards__card__item {
+        background-size: cover !important;
+        background-image: url("../../../assets/images/backgrounds/HyperSDK.png") !important;
+        min-height: 380px;
+        .cards__card__item__img {
+          flex: 2;
+        }
+        .cards__card__item__content {
+          flex: 0.3;
+        }
+      }
+    }
+
+    // BOTTOM CARD
+    .cards__card__item__bottom {
+      @include respond-to(tablet-p) {
+        width: 100%;
+        flex-direction: column;
+      }
+      .cards__card__item__first,
+      .cards__card__item__second {
+        @include respond-to(tablet-p) {
+          max-width: 100% !important;
+          min-width: 100% !important;
+          width: 100% !important;
+        }
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-image: url("../../../assets/images/backgrounds/HyperNFT.png") !important;
+      }
+
+      .cards__card__item__second {
+        background-image: url("../../../assets/images/backgrounds/HyperBoost.png") !important;
+      }
+      position: relative;
+      &::after {
+        content: url("../../../assets/images/backgrounds/CircleSecond.svg");
+        top: -130px;
+        position: absolute;
+        z-index: -1;
+        left: 300px;
+      }
+      display: flex;
+      gap: 2.5rem;
+      .cards__card__item {
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+          rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+          rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+          rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        height: 100%;
+        max-width: 348px;
+        min-width: 348px;
+      }
+    }
+  }
+
+  .cards__card__item {
+    transition: all 0.3s ease-in-out;
+    padding: 3rem;
+    border-radius: 20px;
+    background-color: $card-bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .cards__card__item__img {
+      flex: 1;
+    }
+    .cards__card__item__content__text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      font-size: 34px;
+      font-weight: $bold-weight;
+      line-height: 1.13;
+      text-align: left;
+      color: $light-color;
+    }
+    .cards__card__item__title {
+      color: $card-title-color;
+      font-size: $small-font-size;
+      font-size: 14px;
+    }
+  }
+}
+
+.cards__card__item__hover {
+  transition: all 0.1s ease-in-out;
+  --borderWidth: 3px;
+  position: relative;
+}
+.cards__card__item__hover:after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  border-radius: 21px;
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// @keyframes rotate {
+//   100% {
+//     transform: rotate(1turn);
+//   }
+// }
+
+// .cards__card__item__hover {
+//   .cards__card__item__content__text {
+//     color: #6466d8   !important;
+//   }
+//   position: relative;
+
+//   z-index: 0;
+//   border-radius: 20px;
+//   overflow: hidden;
+//   padding: 2rem;
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     z-index: -2;
+//     left: -50%;
+//     top: -50%;
+//     width: 200%;
+//     height: 200%;
+//     background-color: $card-bg-color;
+//     background-repeat: no-repeat;
+//     background-position: 0 0;
+//     background-image: conic-gradient(transparent, #6466d8, transparent 30%);
+//     animation: rotate 3s linear infinite;
+//   }
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     z-index: -1;
+//     left: 6px;
+//     top: 6px;
+//     width: calc(100% - 12px);
+//     height: calc(100% - 12px);
+//     background: $card-bg-color;
+//     border-radius: 15px;
+//   }
+// }
+
+// @keyframes opacityChange {
+//   50% {
+//     opacity: 0.5;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }

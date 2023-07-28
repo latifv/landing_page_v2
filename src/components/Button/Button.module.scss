@@ -1,0 +1,36 @@
+@import "../../styles/_variables.scss";
+
+.button {
+  cursor: pointer;
+  font-weight: $semi-bold-weight;
+  border: none;
+  padding: 15px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: $secondary-color;
+  border-radius: 10px;
+  display: flex;
+  &:hover {
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
+  }
+}
+
+.btn__grad {
+  background-image: $gradient-color;
+  padding: 15px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: $secondary-color;
+  border-radius: 10px;
+  display: block;
+  &:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+}
