@@ -4,6 +4,14 @@ export const menuItems = [
     path: "/",
     isSubmenu: true,
     submenuItems: [
+       {
+        name: "HyperSDK",
+        path: "/hypersdk",
+      },
+      {
+        name: "HyperNFT",
+        path: "/hypernft",
+      },
       {
         name: "HyperStore",
         path: "/hyperstore",
@@ -51,22 +59,9 @@ export const menuItems = [
   },
   {
     name: "HyperDAO",
-    path: "/",
-    isSubmenu: true,
-    submenuItems: [
-      {
-        name: "HyperSDK (soon)",
-        path: "/hypersdk",
-      },
-      {
-        name: "HyperNFT (soon)",
-        path: "/hypernft",
-      },
-      {
-        name: "HyperDAO (soon)",
-        path: "/dao",
-      },
-    ],
+    path: "/dao",
+    isSubmenu:false,
+  
   },
 
   {

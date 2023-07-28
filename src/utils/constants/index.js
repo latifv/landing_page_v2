@@ -4,7 +4,7 @@ import {
   leftCard,
   rightCardFirst,
   rightCardSecond,
-  // rightCardThird,
+  rightCardThird,
 } from "./Cards";
 import { ecoTitle, ecoDesc, ecoCardItems } from "./Ecosystem";
 import { ListBanner } from "./ListBanner";
@@ -22,7 +22,7 @@ export {
   leftCard,
   rightCardFirst,
   rightCardSecond,
-  // rightCardThird,
+   rightCardThird,
   ecoTitle,
   ecoDesc,
   ecoCardItems,

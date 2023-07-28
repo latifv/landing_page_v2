@@ -144,6 +144,7 @@ const About = () => {
             Turan,
           ]}
           active={0}
+          name={teamsInfo}
         />
         <p className={`${styles.about_bottom__desc___other} ${styles.desc}`}>
           {aboutContent.thirdTitle}
@@ -177,7 +178,10 @@ const About = () => {
         >
           {aboutContent.fifthDesc}
         </p>
-        <Carousel items={teamsInfo} active={0} />
+        <Carousel  items={[
+           Carbon,
+           Yay,Sundeep,Pedro,Nathan,Musthafa,Ian,Fabian
+          ]}active={0}/>
         <p className={`${styles.about_bottom__desc___other} ${styles.desc}`}>
           {aboutContent.sixthTitle}
         </p>

@@ -4,10 +4,12 @@ import { menuItems } from "../../utils/constants";
 import { BaseLogo, Arrow } from "../../assets";
 import Button from "../Button/Button";
 import { Telegram, Discord, Twitter, Youtube } from "../../assets";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { HiMenuAlt1 } from "react-icons/hi";
 
 const Navbar = () => {
+  const navigate = useNavigate()
+
   const [scrolled, setScrolled] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(-1);
   const dropdownRef = useRef([]);
@@ -16,6 +18,10 @@ const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const mobileMenuRef = useRef(); // Referansı oluştur
+
+  const redirectToDAO = () => {
+    navigate("/dao"); 
+  };
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -127,7 +133,9 @@ const Navbar = () => {
                   onMouseEnter={() => setDropdownOpen(index)}
                   ref={(el) => (dropdownRef.current[index] = el)}
                   onClick={() => {
-                    if (item.name.toLowerCase() === "contact") {
+                    if (item.name === "HyperDAO") {
+                      redirectToDAO();}
+                    else if(item.name.toLowerCase() === "contact") {
                       scrollToContact();
                     }
                   }}

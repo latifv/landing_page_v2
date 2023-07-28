@@ -82,24 +82,28 @@ export const becomeDatas = [
     title: "HOLD $HGPT TOKEN",
     desc: "HyperGPT DAO Member olabilmek için Metamask hesabınızda $HGPT token tutmanız gerekmektedir. Hold edeceğiniz token adedi alacağınız rolde belirleyici olacaktır.",
     btnText: "Buy $HGPT",
+    link:''
   },
   {
     id: StepSecond,
     title: "VOTE ON SNAPSHOT",
     desc: "Now that you are a DAO member, you can vote in Snapshot. Remember, with the first vote you give in Snapshot, you will complete the verification process in Guild.xyz and you will be able to get the role specific to your tier.",
     btnText: "Vote on Snapshot",
+    link:'https://snapshot.org/#/hypergptdao.eth'
   },
   {
     id: StepThird,
     title: "VERIFY ON GUILD.XYZ AND CLAIM YOUR ROLE",
     desc: "Now that you are a DAO member, you can vote in Snapshot. Remember, with the first vote you give in Snapshot, you will complete the verification process in Guild.xyz and you will be able to get the role specific to your tier.",
     btnText: "Verify on Guild",
+    link:'https://guild.xyz/hypergpt'
   },
   {
     id: StepFourth,
     title: "CONNECT YOUR DISCORD TO HYPERSTORE",
     desc: "Visit HyperStore and link your Discord account. So you can add, validate, and contribute comments on the HyperStore. You're in control now, what are you waiting for!",
     btnText: "Visit HyperStore",
+    link:'/hyperstore'
   },
 ];
 

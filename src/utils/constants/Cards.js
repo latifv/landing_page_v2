@@ -33,14 +33,14 @@ export const rightCardSecond = {
   link: "/hypernft",
 };
 
-// export const rightCardThird = {
-//   title: "HYPERBOOST",
-//   img: "test",
-//   contentText: {
-//     first: "AI-BASED",
-//     second: "ADVERTISEMENT",
-//     third: "MODEL",
-//   },
-//   buttonText: "Coming Soon",
-//   link: "https://hyperstore.ai/",
-// };
+export const rightCardThird = {
+  title: "HYPERBOOST",
+  img: "test",
+  contentText: {
+    first: "AI-BASED",
+    second: "ADVERTISEMENT",
+    third: "MODEL",
+  },
+  buttonText: "Coming Soon",
+  link: "https://hyperstore.ai/",
+};

@@ -76,13 +76,14 @@ const Audit = ({ howtoRef }) => {
           <div className={styles.audit_mid__tokenAddress}>
             <img src={Eth} alt="" />
             <span>
-              <p>{formatToken(auditMid.tokenAddressFirt)}</p>
+              <p>{formatToken(auditMid.tokenAddressSecond)}</p>
+              
             </span>
             <img
               className={styles.audit_mid__tokenAddress__copy}
               src={Copy}
               alt=""
-              onClick={() => copyToClipboard(auditMid.tokenAddressFirt)}
+              onClick={() => copyToClipboard(auditMid.tokenAddressSecond)}
             />
           </div>
         </div>

@@ -200,10 +200,13 @@ const PagesLayout = ({ data }) => {
               <div>
                 <h1>{item.title}</h1>
                 <p>{item.desc}</p>
+                
               </div>
-              <div>
-                <Button title={item.btnText} isGradient={true} />
-              </div>
+              <a  href={item.link}  target="_blank"
+                  rel="noreferrer"
+                  key={index} >
+                <Button title={item.btnText} isGradient={true}  />
+              </a>
             </div>
           );
         })}
