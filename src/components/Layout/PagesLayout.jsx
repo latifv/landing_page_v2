@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./PagesLayout.module.scss";
 import Button from "../Button/Button";
 import { Play } from "../../assets";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import HalfRobot from "../../assets/images/halfRobot.svg";
 import nftVideo from "../../assets/videos/hypernft.mp4";
 import sdkVideo from "../../assets/videos/hypersdk.mp4";
@@ -202,11 +202,11 @@ const PagesLayout = ({ data }) => {
                 <p>{item.desc}</p>
                 
               </div>
-              <a  href={item.link}  target="_blank"
+              <Link  to={index===0?item.link+"?isHgpt=true":item.link}  target="_blank"
                   rel="noreferrer"
                   key={index} >
                 <Button title={item.btnText} isGradient={true}  />
-              </a>
+              </Link>
             </div>
           );
         })}

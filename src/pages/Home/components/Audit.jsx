@@ -1,9 +1,10 @@
-import React, { useCallback, useContext } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import styles from "./Audit.module.scss";
 import { auditMid, auditTop } from "../../../utils/constants";
 import { BinanceIcon, Certik, Copy, WalletButton, Eth } from "../../../assets";
 import { NotificationContext } from "../../../context/NotificationContext";
 import { Mexc, Pancakeswap, Bitmart } from "../../../assets";
+import { useSearchParams } from "react-router-dom";
 
 const Audit = ({ howtoRef }) => {
   const { dispatch } = useContext(NotificationContext);
@@ -20,6 +21,26 @@ const Audit = ({ howtoRef }) => {
       payload: { message: "Copy Successful !", type: "success" },
     });
   }, []);
+  
+  const scrollToRef = (ref) => {
+    window.scrollTo({
+      top: ref?.current?.offsetTop-1,
+      behavior: "smooth",
+    });
+  }; scrollToRef(howtoRef);
+
+
+const [searchParams]=useSearchParams()
+console.log('searchParams',searchParams.get('isHgpt'))
+
+
+  
+  useEffect(() => {
+    if(searchParams.get('isHgpt')==='true'){
+
+      scrollToRef(howtoRef);
+    }
+  }, [searchParams])
 
   const buyList = [
     {

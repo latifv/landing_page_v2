@@ -31,82 +31,106 @@ const teamsInfo = [
   {
     name: "Latif",
     img: Latif,
+    link:'https://www.linkedin.com/in/latifvardar/'
   },
   {
     name: "Bulent",
     img: Bulent,
+    link:'https://www.linkedin.com/in/bulentkap/'
   },
   {
     name: "Alex",
     img: Alex,
+    
   },
   {
     name: "Altug",
     img: Altug,
+    
   },
   {
     name: "Fırat",
     img: Fırat,
+   
   },
   {
     name: "Hakan",
     img: Hakan,
+   
   },
   {
     name: "Ilker",
     img: Ilker,
+    
   },
   {
     name: "Merve",
     img: Merve,
+   
   },
   {
     name: "Soner",
     img: Soner,
+    
   },
   {
     name: "Sukran",
     img: Sukran,
+   
   },
   {
     name: "Turan",
     img: Turan,
+    link:'https://www.linkedin.com/in/canekmekci/'
   },
+ 
+];
+const teamsInfoPartner= [
+  
   {
     name: "Carbon",
     img: Carbon,
+    
   },
   {
     name: "Fabian",
     img: Fabian,
+   
   },
   {
     name: "Ian",
     img: Ian,
+   
   },
   {
     name: "Musthafa",
     img: Musthafa,
+   
   },
   {
     name: "Nathan",
     img: Nathan,
+    
   },
   {
     name: "Pedro",
     img: Pedro,
+   
   },
   {
     name: "Sundeep",
     img: Sundeep,
+   
   },
   {
     name: "Yay",
     img: Yay,
+    
   },
 ];
 
 const About = () => {
+  
   return (
     <div className={styles.about}>
       <div className={styles.about_top}>
@@ -144,7 +168,8 @@ const About = () => {
             Turan,
           ]}
           active={0}
-          name={teamsInfo}
+          teamsInfo={teamsInfo}
+         
         />
         <p className={`${styles.about_bottom__desc___other} ${styles.desc}`}>
           {aboutContent.thirdTitle}
@@ -178,10 +203,7 @@ const About = () => {
         >
           {aboutContent.fifthDesc}
         </p>
-        <Carousel  items={[
-           Carbon,
-           Yay,Sundeep,Pedro,Nathan,Musthafa,Ian,Fabian
-          ]}active={0}/>
+        <Carousel  items={teamsInfoPartner.map((item) => item.img)} active={0} teamsInfo={teamsInfoPartner}/>
         <p className={`${styles.about_bottom__desc___other} ${styles.desc}`}>
           {aboutContent.sixthTitle}
         </p>

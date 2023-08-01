@@ -82,7 +82,7 @@ export const becomeDatas = [
     title: "HOLD $HGPT TOKEN",
     desc: "HyperGPT DAO Member olabilmek için Metamask hesabınızda $HGPT token tutmanız gerekmektedir. Hold edeceğiniz token adedi alacağınız rolde belirleyici olacaktır.",
     btnText: "Buy $HGPT",
-    link:''
+    link:'/'
   },
   {
     id: StepSecond,

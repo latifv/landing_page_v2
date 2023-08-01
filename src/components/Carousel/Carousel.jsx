@@ -5,8 +5,8 @@ import {
   HiOutlineArrowCircleLeft,
   HiOutlineArrowCircleRight,
 } from "react-icons/hi";
-
-function Carousel({ items, active }) {
+import { AiFillLinkedin } from "react-icons/ai";
+function Carousel({ items, active,teamsInfo  }) {
   const [state, setState] = useState({
     items,
     active,
@@ -24,6 +24,7 @@ function Carousel({ items, active }) {
         index = i % state.items.length;
       }
       level = state.active - i;
+      
       items.push(
         <CSSTransition
           key={index}
@@ -39,9 +40,13 @@ function Carousel({ items, active }) {
             className={styles.itemWrapper}
             id={state.items[index]}
             level={level}
-          />
+            linkedinLink={teamsInfo[index].link}
+            />
+          
         </CSSTransition>
+        
       );
+      
     }
     return items;
   }
@@ -107,23 +112,29 @@ function Carousel({ items, active }) {
   );
 }
 
-function Item({ id, level }) {
-  const [hover, setHover] = useState(false); // State to track hover status
+function Item({ id, level, linkedinLink }) {
+  const [hover, setHover] = useState(false);
+  const name = id.split("/").pop().split(".")[0];
+  const hasLinkedinLink = !!linkedinLink;
 
   return (
     <div
       className={`${styles.item} ${styles["level" + level]}`}
-      onMouseEnter={() => setHover(true)} // Set hover to true when mouse enters
-      onMouseLeave={() => setHover(false)} // Set hover to false when mouse leaves
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
-      <div
-        style={{
-          height: "100%",
-          position: "relative",
-        }}
-      >
+      <div style={{ height: "100%", position: "relative", display: "flex", alignItems: "center" }}>
         <img src={id} alt="" />
-        {hover && <div className={styles.textOverlay}>Test Name</div>}
+        {hover && (
+          <div className={styles.textOverlay}>
+            {name} 
+            {hasLinkedinLink && (
+              <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
+                <AiFillLinkedin size={32} color="#0e76a8" className={styles.linkedinIcon}  style={{paddingTop: "5px"}}/>
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
