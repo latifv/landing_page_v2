@@ -24,6 +24,10 @@ export const menuItems = [
     isSubmenu: true,
     submenuItems: [
       {
+        name: "Buy on Gate.io",
+        path: "https://www.gate.io/tr/trade/HGPT_USDT",
+      },
+      {
         name: "Buy on MEXC",
         path: "https://www.mexc.com/exchange/HGPT_USDT  ",
       },

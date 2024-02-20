@@ -15,6 +15,7 @@ import Robot from "./images/Robot.svg";
 import DaoPeople from "./images/DaoPeople.svg";
 import Certik from "./images/logos/Certik.svg";
 import Mexc from "./images/logos/Mexc.svg";
+import Gate from "./images/logos/Gate.svg";
 import Bitmart from "./images/logos/Bitmart.svg";
 import Pancakeswap from "./images/logos/Pancakeswap.svg";
 import Payment from "./images/icons/Payment.svg";
@@ -67,6 +68,7 @@ export {
   BinanceIcon,
   Copy,
   Mexc,
+  Gate,
   Bitmart,
   Pancakeswap,
   Payment,

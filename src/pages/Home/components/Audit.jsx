@@ -3,7 +3,7 @@ import styles from "./Audit.module.scss";
 import { auditMid, auditTop } from "../../../utils/constants";
 import { BinanceIcon, Certik, Copy, WalletButton, Eth } from "../../../assets";
 import { NotificationContext } from "../../../context/NotificationContext";
-import { Mexc, Pancakeswap, Bitmart } from "../../../assets";
+import { Mexc, Pancakeswap, Bitmart,Gate} from "../../../assets";
 import { useSearchParams } from "react-router-dom";
 
 const Audit = ({ howtoRef }) => {
@@ -47,6 +47,11 @@ console.log('searchParams',searchParams.get('isHgpt'))
       name: "Mexc",
       img: Mexc,
       link: "https://www.mexc.com/exchange/HGPT_USDT ",
+    },
+    {
+      name: "Gate.io",
+      img: Gate,
+      link: "https://www.gate.io/trade/HGPT_USDT",
     },
     {
       name: "Pancakeswap",
